@@ -1,0 +1,2 @@
+<!--pages/details/details.wxml-->
+<web-view src="http://wxtest.smeia.cn/creditcard/sample/life/rights/html/detailRights.html?i={{details.newsId}}"></web-view>

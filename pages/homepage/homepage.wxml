@@ -1,0 +1,19 @@
+<!--pages/homepage/homepage.wxml-->
+<view  calss="homecontainer">
+<swiper indicator-dots autoplay='true'>
+ <navigator url='/pages/details/details?newsId={{item.newsId}}' wx:for='{{modules}}' wx:key='{{index}}'>
+  <swiper-item>
+    <image class="pic" src='http://wxtest.smeia.cn{{item.picUrl}}'></image>
+  </swiper-item>   
+ </navigator>
+</swiper>
+<view class="menucontainer">
+  <navigator class='inner' url='/pages/menus/menusDetail?index={{index}}'  wx:for='{{menus}}' wx:key='{{index}}'>
+  <view class='img_box'>
+    <image class="menu_img" src='http://wxtest.smeia.cn{{item.picUrl}}' />
+  </view>
+  <text class="menu_text">{{item.title}}</text>
+ </navigator>
+</view>
+</view>
+

@@ -1,0 +1,2 @@
+<!--pages/menus/menusDetail.wxml-->
+<web-view src='{{contentSrcUrl}}'></web-view>
