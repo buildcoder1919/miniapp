@@ -1,5 +1,5 @@
-// pages/homepage/homepage.js
-let appDatas=getApp();
+// index.js
+let appDatas = getApp();
 let utils = require('../../utils/util.js');
 Page({
 
@@ -7,31 +7,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    modules:[],
-    menus:[],
+    modules: [],
+    menus: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
     wx.request({
-      url: appDatas.data.url2 + appDatas.data.url0 + '/ccwcservice/life/wechat-life/ignore/rightsList?timestamp=' + utils.getTimeStamp() + '&nonce=' + utils.loadRandom(4),
-      data:'{\"moduleCode\":\"'+appDatas.data.moduleCode+'\"}',
-      method:'post',
-      dataType:'json',
+      url: utils.url2 + utils.url0 + '/ccwcservice/life/wechat-life/ignore/rightsList?timestamp=' + utils.getTimeStamp() + '&nonce=' + utils.loadRandom(4),
+      data: '{\"moduleCode\":\"' + utils.moduleCode + '\"}',
+      method: 'post',
+      dataType: 'json',
       success: json => {
         //更新状态值
         this.setData({
-            modules: json.data.list
+          modules: json.data.list
         })
       }
     })
 
     wx.request({
-      url: appDatas.data.url2 + appDatas.data.url0 + '/ccwcservice/life/wechat-life/ignore/rightsList?timestamp=' + utils.getTimeStamp() + '&nonce=' + utils.loadRandom(4),
-      data: '{\"moduleCode\":\"homeGuide\"}',
+      url: utils.url2 + utils.url0 + '/ccwcservice/life/wechat-life/ignore/rightsList?timestamp=' + utils.getTimeStamp() + '&nonce=' + utils.loadRandom(4),
+      data: '{\"moduleCode\":\"'+utils.menusCode+'\"}',
       method: 'post',
       dataType: 'json',
       success: json => {
@@ -48,7 +48,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
