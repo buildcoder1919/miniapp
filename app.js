@@ -1,9 +1,6 @@
 //app.js
 App({
   data:{
-    url0:"/creditcard",
-    url2:"http://wxtest.smeia.cn",
-    moduleCode:"enjoyarrondi",
     menus:[],
   },
   onLaunch: function () {

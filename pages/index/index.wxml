@@ -1,13 +1,31 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view  calss='homecontainer' >
+ <view class='swiper_model'>
+  <swiper indicator-dots autoplay='true'>
+   <navigator url='/pages/details/details?newsId={{item.newsId}}' wx:for='{{modules}}' wx:key='{{index}}'>
+    <swiper-item>
+     <image class='pic' src='http://wxtest.smeia.cn{{item.picUrl}}'></image>
+    </swiper-item>   
+   </navigator>  
+  </swiper>
 </view>
+<view class='menucontainer'>
+  <navigator class='inner' url='/pages/menus/menusDetail?index={{index}}'  wx:for='{{menus}}' wx:key='{{index}}'>
+  <view class='img_box'>
+    <image class='menu_img' src='http://wxtest.smeia.cn{{item.picUrl}}' />
+  </view>
+  <text class='menu_text'>{{item.title}}</text>
+ </navigator>
+</view>
+<view class='divider'></view>
+<view class = 'banner'>
+ <swiper autoplay='true'>
+   <navigator class='banner_inner' url='/pages/details/details?newsId={{item.newsId}}' wx:for='{{modules}}' wx:key='{{index}}'>
+    <swiper-item>
+     <image class='banner_pic' src='http://wxtest.smeia.cn{{utils.url2}}{{item.picUrl}}'></image>
+    </swiper-item>   
+   </navigator>  
+  </swiper>
+</view>
+</view>
+

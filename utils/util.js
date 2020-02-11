@@ -14,11 +14,11 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-function getTimeStamp(){
+function getTimeStamp() {
   return Date.now();
 }
 
-function loadRandom(len) {
+function loadRandom (len) {
   let rnd = '';
   for (let i = 0; i < len; i++) {
     rnd += Math.floor(Math.random() * 10);
@@ -28,6 +28,10 @@ function loadRandom(len) {
 
 module.exports = {
   formatTime: formatTime,
+  url0: '/creditcard',
+  url2: 'http://wxtest.smeia.cn',
+  moduleCode: 'enjoyarrondi',
+  menusCode: 'homeGuide',
   getTimeStamp: getTimeStamp,
   loadRandom: loadRandom
-}
+};
